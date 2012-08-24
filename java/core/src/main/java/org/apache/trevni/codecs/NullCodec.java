@@ -15,27 +15,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.apache.trevni;
+package org.apache.trevni.codecs;
 
+import java.io.IOException;
 import java.nio.ByteBuffer;
 
-/** Interface for checksum algorithms. */
-abstract class Checksum {
+/** Implements "null" (pass through) codec. */
+final class NullCodec extends Codec {
 
-  public static Checksum get(MetaData meta) {
-    String name = meta.getChecksum();
-    if (name == null || "null".equals(name))
-      return new NullChecksum();
-    else if ("crc32".equals(name))
-      return new Crc32Checksum();
-    else
-      throw new TrevniRuntimeException("Unknown checksum: "+name);
+  @Override
+  public ByteBuffer compress(ByteBuffer buffer) throws IOException {
+    return buffer;
   }
 
-  /** The number of bytes per checksum. */
-  public abstract int size();
-
-  /** Compute a checksum. */
-  public abstract ByteBuffer compute(ByteBuffer data);
+  @Override
+  public ByteBuffer decompress(ByteBuffer data) throws IOException {
+    return data;
+  }
 
 }

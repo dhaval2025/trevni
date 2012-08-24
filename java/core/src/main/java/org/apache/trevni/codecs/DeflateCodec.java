@@ -15,7 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.apache.trevni;
+package org.apache.trevni.codecs;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -33,6 +33,7 @@ class DeflateCodec extends Codec {
   private Inflater inflater;
 
   @Override
+  public
   ByteBuffer compress(ByteBuffer data) throws IOException {
     ByteArrayOutputStream baos = getOutputBuffer(data.remaining());
     writeAndClose(data, new DeflaterOutputStream(baos, getDeflater()));
@@ -40,6 +41,7 @@ class DeflateCodec extends Codec {
   }
 
   @Override
+  public
   ByteBuffer decompress(ByteBuffer data) throws IOException {
     ByteArrayOutputStream baos = getOutputBuffer(data.remaining());
     writeAndClose(data, new InflaterOutputStream(baos, getInflater()));

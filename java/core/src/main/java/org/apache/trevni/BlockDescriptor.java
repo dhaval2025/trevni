@@ -19,6 +19,9 @@ package org.apache.trevni;
 
 import java.io.IOException;
 
+import org.apache.trevni.BlockDescriptor;
+import org.apache.trevni.output.OutputBuffer;
+
 class BlockDescriptor {
   int rowCount;
   int uncompressedSize;

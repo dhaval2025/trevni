@@ -21,6 +21,12 @@ import java.io.IOException;
 import java.util.List;
 import java.util.ArrayList;
 
+import org.apache.trevni.ColumnFileReader;
+import org.apache.trevni.ColumnMetaData;
+import org.apache.trevni.MetaData;
+import org.apache.trevni.TrevniRuntimeException;
+import org.apache.trevni.ValueType;
+
 /** Metadata for a column. */
 public class ColumnMetaData extends MetaData<ColumnMetaData> {
 
@@ -107,6 +113,7 @@ public class ColumnMetaData extends MetaData<ColumnMetaData> {
     throws IOException {
     ColumnMetaData result = new ColumnMetaData();
     MetaData.read(in, result);
+    
     result.name = result.getString(NAME_KEY);
     result.type = ValueType.forName(result.getString(TYPE_KEY));
     result.values = result.getBoolean(VALUES_KEY);

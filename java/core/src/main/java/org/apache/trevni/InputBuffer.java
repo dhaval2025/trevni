@@ -1,3 +1,4 @@
+package org.apache.trevni;
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -15,12 +16,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.apache.trevni;
+
 
 import java.io.EOFException;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.charset.Charset;
+
+import org.apache.trevni.input.Input;
+import org.apache.trevni.input.InputBytes;
 
 /** Used to read values. */
 class InputBuffer {

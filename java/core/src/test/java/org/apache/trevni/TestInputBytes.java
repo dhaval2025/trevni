@@ -23,6 +23,8 @@ import java.util.List;
 import java.util.Random;
 import java.util.Arrays;
 
+import org.apache.trevni.input.Input;
+import org.apache.trevni.input.InputBytes;
 import org.junit.Assert;
 import org.junit.Test;
 

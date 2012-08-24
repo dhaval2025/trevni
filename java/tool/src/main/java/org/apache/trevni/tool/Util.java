@@ -28,9 +28,9 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.URI;
 
-import org.apache.trevni.Input;
 import org.apache.trevni.avro.HadoopInput;
-import org.apache.trevni.InputFile;
+import org.apache.trevni.input.Input;
+import org.apache.trevni.input.InputFile;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.FileSystem;

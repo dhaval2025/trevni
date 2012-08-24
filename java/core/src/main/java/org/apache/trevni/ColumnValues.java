@@ -21,6 +21,13 @@ import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.util.Iterator;
 
+import org.apache.trevni.ColumnDescriptor;
+import org.apache.trevni.TrevniRuntimeException;
+import org.apache.trevni.ValueType;
+import org.apache.trevni.checksums.Checksum;
+import org.apache.trevni.codecs.Codec;
+import org.apache.trevni.input.InputBytes;
+
 /** An iterator over column values. */
 public class ColumnValues<T extends Comparable>
   implements Iterator<T>, Iterable<T> {

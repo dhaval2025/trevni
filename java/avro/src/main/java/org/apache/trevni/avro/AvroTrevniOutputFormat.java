@@ -36,8 +36,8 @@ import org.apache.avro.reflect.ReflectData;
 import org.apache.avro.mapred.AvroJob;
 import org.apache.avro.mapred.AvroWrapper;
 
-import org.apache.trevni.MetaData;
 import org.apache.trevni.ColumnFileMetaData;
+import org.apache.trevni.MetaData;
 
 /** An {@link org.apache.hadoop.mapred.OutputFormat} that writes Avro data to
  * Trevni files.

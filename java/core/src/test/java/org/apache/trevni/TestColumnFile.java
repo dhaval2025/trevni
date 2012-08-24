@@ -28,6 +28,12 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.HashMap;
 
+import org.apache.trevni.ColumnFileMetaData;
+import org.apache.trevni.ColumnFileReader;
+import org.apache.trevni.ColumnFileWriter;
+import org.apache.trevni.ColumnMetaData;
+import org.apache.trevni.ColumnValues;
+import org.apache.trevni.ValueType;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;

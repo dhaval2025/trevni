@@ -15,35 +15,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.apache.trevni;
+package org.apache.trevni.checksums;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.nio.channels.FileChannel;
 import java.nio.ByteBuffer;
-import java.io.IOException;
 
-/** An {@link Input} for files. */
-public class InputFile implements Input {
+/** Implements "null" (empty) checksum. */
+final class NullChecksum extends Checksum {
 
-  private FileChannel channel;
+  @Override public int size() { return 0; }
 
-  /** Construct for the given file. */
-  public InputFile(File file) throws IOException {
-    this.channel = new FileInputStream(file).getChannel();
+  @Override public ByteBuffer compute(ByteBuffer data) {
+    return ByteBuffer.allocate(0);
   }
-
-  @Override
-  public long length() throws IOException { return channel.size(); }
-
-  @Override
-  public int read(long position, byte[] b, int start, int len)
-    throws IOException {
-    return channel.read(ByteBuffer.wrap(b, start, len), position);
-  }
-
-  @Override
-  public void close() throws IOException { channel.close(); }
 
 }
-

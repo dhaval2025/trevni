@@ -23,6 +23,14 @@ import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.trevni.BlockDescriptor;
+import org.apache.trevni.ColumnFileWriter;
+import org.apache.trevni.ColumnMetaData;
+import org.apache.trevni.TrevniRuntimeException;
+import org.apache.trevni.checksums.Checksum;
+import org.apache.trevni.codecs.Codec;
+import org.apache.trevni.output.OutputBuffer;
+
 class ColumnOutputBuffer {
   private ColumnFileWriter writer;
   private ColumnMetaData meta;

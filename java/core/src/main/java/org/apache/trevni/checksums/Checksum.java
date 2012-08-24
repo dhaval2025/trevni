@@ -15,17 +15,30 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.apache.trevni;
+package org.apache.trevni.checksums;
 
-import java.io.IOException;
-import java.io.Closeable;
+import java.nio.ByteBuffer;
 
-/** A byte source that supports positioned read and length. */
-public interface Input extends Closeable {
-  /** Return the total length of the input. */
-  long length() throws IOException;
+import org.apache.trevni.MetaData;
+import org.apache.trevni.TrevniRuntimeException;
 
-  /** Positioned read. */
-  int read(long position, byte[] b, int start, int len) throws IOException;
+/** Interface for checksum algorithms. */
+public abstract class Checksum {
+
+  public static Checksum get(MetaData meta) {
+    String name = meta.getChecksum();
+    if (name == null || "null".equals(name))
+      return new NullChecksum();
+    else if ("crc32".equals(name))
+      return new Crc32Checksum();
+    else
+      throw new TrevniRuntimeException("Unknown checksum: "+name);
+  }
+
+  /** The number of bytes per checksum. */
+  public abstract int size();
+
+  /** Compute a checksum. */
+  public abstract ByteBuffer compute(ByteBuffer data);
+
 }
-

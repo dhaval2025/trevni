@@ -15,13 +15,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.apache.trevni;
+package org.apache.trevni.codecs;
 
 import java.io.IOException;
 import java.nio.ByteBuffer;
 
+import org.apache.trevni.MetaData;
+import org.apache.trevni.TrevniRuntimeException;
+
 /** Interface for compression codecs. */
-abstract class Codec {
+public abstract class Codec {
 
   public static Codec get(MetaData meta) {
     String name = meta.getCodec();
@@ -36,9 +39,9 @@ abstract class Codec {
   }
 
   /** Compress data */
-  abstract ByteBuffer compress(ByteBuffer uncompressedData) throws IOException;
+  public abstract ByteBuffer compress(ByteBuffer uncompressedData) throws IOException;
 
   /** Decompress data  */
-  abstract ByteBuffer decompress(ByteBuffer compressedData) throws IOException;
+  public abstract ByteBuffer decompress(ByteBuffer compressedData) throws IOException;
 
 }

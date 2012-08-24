@@ -17,27 +17,22 @@
  */
 package org.apache.trevni.avro;
 
-import java.io.File;
-import java.io.IOException;
-import java.io.EOFException;
-import java.io.InputStream;
-import java.io.FileInputStream;
-import java.util.List;
-import java.util.ArrayList;
+import static org.junit.Assert.assertEquals;
 
-import org.apache.trevni.ValueType;
-import org.apache.trevni.ColumnMetaData;
-import org.apache.trevni.ColumnFileMetaData;
+import java.io.EOFException;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.apache.avro.Schema;
+import org.apache.avro.generic.GenericDatumReader;
+import org.apache.avro.io.DatumReader;
 import org.apache.avro.io.Decoder;
 import org.apache.avro.io.DecoderFactory;
-import org.apache.avro.io.DatumReader;
-import org.apache.avro.generic.GenericDatumReader;
-
-
+import org.apache.trevni.ColumnFileMetaData;
 import org.junit.Test;
-import static org.junit.Assert.*;
 
 public class TestCases {
 

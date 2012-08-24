@@ -21,6 +21,9 @@ import java.util.Random;
 
 import java.io.ByteArrayOutputStream;
 
+import org.apache.trevni.ValueType;
+import org.apache.trevni.input.InputBytes;
+import org.apache.trevni.output.OutputBuffer;
 import org.junit.Assert;
 import org.junit.Test;
 

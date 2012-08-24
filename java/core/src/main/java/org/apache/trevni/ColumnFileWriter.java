@@ -24,6 +24,13 @@ import java.io.OutputStream;
 import java.util.Set;
 import java.util.HashSet;
 
+import org.apache.trevni.ArrayColumnOutputBuffer;
+import org.apache.trevni.ColumnFileMetaData;
+import org.apache.trevni.ColumnMetaData;
+import org.apache.trevni.ColumnOutputBuffer;
+import org.apache.trevni.TrevniRuntimeException;
+import org.apache.trevni.output.OutputBuffer;
+
 /** Writes data to a column file.
  * All data is buffered until {@link #writeTo(File)} is called.
  */

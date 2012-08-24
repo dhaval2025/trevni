@@ -26,6 +26,15 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import org.apache.trevni.ColumnDescriptor;
+import org.apache.trevni.ColumnFileMetaData;
+import org.apache.trevni.ColumnFileWriter;
+import org.apache.trevni.ColumnMetaData;
+import org.apache.trevni.ColumnValues;
+import org.apache.trevni.TrevniRuntimeException;
+import org.apache.trevni.input.Input;
+import org.apache.trevni.input.InputFile;
+
 /** Reads data from a column file. */
 public class ColumnFileReader implements Closeable {
   private Input file;
@@ -97,7 +106,6 @@ public class ColumnFileReader implements Closeable {
     this.columnCount = in.readFixed32();
     this.metaData = ColumnFileMetaData.read(in);
     this.columnsByName = new HashMap<String,ColumnDescriptor>(columnCount);
-
     columns = new ColumnDescriptor[columnCount];
     readColumnMetaData(in);
     readColumnStarts(in);

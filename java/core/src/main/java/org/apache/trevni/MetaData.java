@@ -22,6 +22,10 @@ import java.nio.charset.Charset;
 import java.util.Map;
 import java.util.LinkedHashMap;
 
+import org.apache.trevni.MetaData;
+import org.apache.trevni.TrevniRuntimeException;
+import org.apache.trevni.output.OutputBuffer;
+
 /** Base class for metadata. */
 public class MetaData<T extends MetaData> extends LinkedHashMap<String,byte[]> {
 

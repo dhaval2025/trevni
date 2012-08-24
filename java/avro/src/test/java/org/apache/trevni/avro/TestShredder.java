@@ -21,9 +21,9 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Arrays;
 
-import org.apache.trevni.ValueType;
-import org.apache.trevni.ColumnMetaData;
 import org.apache.trevni.ColumnFileMetaData;
+import org.apache.trevni.ColumnMetaData;
+import org.apache.trevni.ValueType;
 
 import org.apache.avro.Schema;
 

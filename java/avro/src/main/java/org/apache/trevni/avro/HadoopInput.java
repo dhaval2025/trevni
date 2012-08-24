@@ -24,7 +24,7 @@ import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.fs.FSDataInputStream;
 
-import org.apache.trevni.Input;
+import org.apache.trevni.input.Input;
 
 /** Adapt a Hadoop {@link FSDataInputStream} to Trevni's {@link Input}. */
 public class HadoopInput implements Input {

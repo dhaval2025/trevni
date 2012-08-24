@@ -1,3 +1,4 @@
+package org.apache.trevni.input;
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements. See the NOTICE file
@@ -15,11 +16,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.apache.trevni;
+
 
 import java.io.ByteArrayInputStream;
+import java.io.File;
 import java.io.IOException;
 import java.nio.ByteBuffer;
+import java.nio.MappedByteBuffer;
 
 /** An {@link Input} backed with data in a byte array. */
 public class InputBytes extends ByteArrayInputStream implements Input {
@@ -42,5 +45,5 @@ public class InputBytes extends ByteArrayInputStream implements Input {
     return read(b, start, len);
   }
 
-  byte[] getBuffer() { return buf; }
+  public byte[] getBuffer() { return buf; }
 }

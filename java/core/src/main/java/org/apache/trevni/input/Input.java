@@ -1,3 +1,4 @@
+package org.apache.trevni.input;
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -15,20 +16,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.apache.trevni;
+
 
 import java.io.IOException;
-import java.nio.ByteBuffer;
+import java.io.Closeable;
 
-/** Implements "null" (pass through) codec. */
-final class NullCodec extends Codec {
+/** A byte source that supports positioned read and length. */
+public interface Input extends Closeable {
+  /** Return the total length of the input. */
+  long length() throws IOException;
 
-  @Override ByteBuffer compress(ByteBuffer buffer) throws IOException {
-    return buffer;
-  }
-
-  @Override ByteBuffer decompress(ByteBuffer data) throws IOException {
-    return data;
-  }
-
+  /** Positioned read. */
+  int read(long position, byte[] b, int start, int len) throws IOException;
 }
+

@@ -21,6 +21,11 @@ import java.io.IOException;
 
 import java.util.Arrays;
 
+import org.apache.trevni.BlockDescriptor;
+import org.apache.trevni.ColumnMetaData;
+import org.apache.trevni.checksums.Checksum;
+import org.apache.trevni.input.Input;
+
 class ColumnDescriptor<T extends Comparable> {
   final Input file;
   final ColumnMetaData metaData;
@@ -66,6 +71,7 @@ class ColumnDescriptor<T extends Comparable> {
     // read block descriptors
     InputBuffer in = new InputBuffer(file, start);
     int blockCount = in.readFixed32();
+    System.out.println(blockCount);
     BlockDescriptor[] blocks = new BlockDescriptor[blockCount];
     if (metaData.hasIndexValues())
       firstValues = (T[])new Comparable[blockCount];

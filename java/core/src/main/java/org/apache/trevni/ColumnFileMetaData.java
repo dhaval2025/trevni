@@ -19,6 +19,9 @@ package org.apache.trevni;
 
 import java.io.IOException;
 
+import org.apache.trevni.ColumnFileMetaData;
+import org.apache.trevni.MetaData;
+
 /** File-level metadata. */
 public class ColumnFileMetaData extends MetaData<ColumnFileMetaData> {
 

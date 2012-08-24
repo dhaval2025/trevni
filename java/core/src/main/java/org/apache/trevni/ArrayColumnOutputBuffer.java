@@ -19,6 +19,10 @@ package org.apache.trevni;
 
 import java.io.IOException;
 
+import org.apache.trevni.ColumnFileWriter;
+import org.apache.trevni.ColumnMetaData;
+import org.apache.trevni.ColumnOutputBuffer;
+
 /** A column output buffer for array columns. */
 class ArrayColumnOutputBuffer extends ColumnOutputBuffer {
   private int length;                             // remaining in current array

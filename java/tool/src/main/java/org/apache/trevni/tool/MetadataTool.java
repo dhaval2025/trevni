@@ -24,11 +24,11 @@ import java.io.PrintStream;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.trevni.Input;
 import org.apache.trevni.ColumnFileReader;
-import org.apache.trevni.MetaData;
 import org.apache.trevni.ColumnMetaData;
 import org.apache.trevni.ColumnValues;
+import org.apache.trevni.MetaData;
+import org.apache.trevni.input.Input;
 
 import org.codehaus.jackson.JsonFactory;
 import org.codehaus.jackson.JsonGenerator;

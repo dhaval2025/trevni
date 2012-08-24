@@ -27,12 +27,12 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.List;
 
-import org.apache.trevni.ColumnMetaData;
 import org.apache.trevni.ColumnFileReader;
+import org.apache.trevni.ColumnMetaData;
 import org.apache.trevni.ColumnValues;
-import org.apache.trevni.Input;
-import org.apache.trevni.InputFile;
 import org.apache.trevni.TrevniRuntimeException;
+import org.apache.trevni.input.Input;
+import org.apache.trevni.input.InputFile;
 
 import org.apache.avro.Schema;
 import org.apache.avro.Schema.Field;

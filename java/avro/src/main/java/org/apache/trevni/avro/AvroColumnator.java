@@ -23,8 +23,8 @@ import java.util.Map;
 import java.util.IdentityHashMap;
 
 import org.apache.trevni.ColumnMetaData;
-import org.apache.trevni.ValueType;
 import org.apache.trevni.TrevniRuntimeException;
+import org.apache.trevni.ValueType;
 
 import org.apache.avro.Schema;
 import org.apache.avro.Schema.Field;

@@ -15,7 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.apache.trevni;
+package org.apache.trevni.output;
 
 import java.io.IOException;
 import java.io.ByteArrayOutputStream;
@@ -23,9 +23,12 @@ import java.nio.charset.Charset;
 import java.nio.ByteBuffer;
 import java.util.Arrays;
 
+import org.apache.trevni.TrevniRuntimeException;
+import org.apache.trevni.ValueType;
+
 /** Used to write values. */
-class OutputBuffer extends ByteArrayOutputStream {
-  static final int BLOCK_SIZE = 64 * 1024;
+public class OutputBuffer extends ByteArrayOutputStream {
+  public static final int BLOCK_SIZE = 64 * 1024;
 
   public OutputBuffer() { super(BLOCK_SIZE + BLOCK_SIZE >> 2); }
 
